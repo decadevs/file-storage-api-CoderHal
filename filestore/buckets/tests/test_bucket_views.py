@@ -13,6 +13,7 @@ class TestBucketView(APITestCase):
         self.url = reverse('bucket')+'?id=1' 
 
     def test_api_can_create_bucket(self):
+        
         url = reverse("buckets")
         response= self.client.post(url,bucket_data.bucket_data())
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
@@ -25,8 +26,14 @@ class TestBucketView(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_api_can_delete(self):
-        # url = reverse('bucket')+'?id=1' 
+        
         response = self.client.delete(self.url)
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
+
+    def test_api_can_update(self):
+       
+        new_bucket = {'name': 'Updated'}
+        response = self.client.put(self.url, new_bucket, format='json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
