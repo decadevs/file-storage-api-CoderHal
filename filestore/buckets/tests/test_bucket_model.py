@@ -2,7 +2,7 @@ from django.test import TestCase
 from rest_framework.test import APIClient
 from ..models import Bucket
 from ..views import BucketDetail, BucketList
-# from django.core.urlresolvers import reverse
+
 # Create your tests here.
 
 class TestBucketModel(TestCase):
