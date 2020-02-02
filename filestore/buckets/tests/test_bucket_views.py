@@ -19,4 +19,9 @@ class TestBucketView(APITestCase):
         self.assertEqual(response.data['name'],bucket_data.bucket_data()['name'])
 
 
+    def test_api_can_get_a_bucket(self):
+        
+        response = self.client.get(self.url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
+   
