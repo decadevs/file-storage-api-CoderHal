@@ -80,7 +80,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'filestore',
-        # 'HOST': '',
+        'HOST': 'db:27017',
+        'USERNAME': 'hal',
+        'PASSWORD': 'curly',
         
     }
 }
