@@ -1,11 +1,11 @@
 # from .serializer import BucketSerializer
-from ..serializer import BucketSerializer
+from .bucket_serializer import BucketSerializer
 from rest_framework.views import APIView
 from django.http import Http404
 from rest_framework import status
 from rest_framework.response import Response 
 
-from ..models import Bucket
+from .bucket import Bucket
 # from .models import Bucket
 
 
