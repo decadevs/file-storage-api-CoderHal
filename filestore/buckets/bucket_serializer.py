@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models import Bucket
+from .bucket import Bucket
 class BucketSerializer(serializers.ModelSerializer):
     class Meta:
         model = Bucket
