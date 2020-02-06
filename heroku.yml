@@ -1,6 +1,16 @@
 setup:
   addons:
     - plan: heroku-mongolab
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+      as: DATABASE
+>>>>>>> aebabce3dbc29c826b04b18acf01fa3e09bc9d0e
+>>>>>>> 2607c7e788133c7663ed7bd16d21844ff33f5a4e
+>>>>>>> c3e0626514b013dbb60a1845cf193171998c868d
 build:
   docker:
     web: Dockerfile
