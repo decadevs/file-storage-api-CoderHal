@@ -2,8 +2,8 @@ from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.response import Response 
 
-from ..bucket import Bucket
-from ..bucket_serializer import BucketSerializer
+from ..models.bucket import Bucket
+from ..serializers.bucket_serializer import BucketSerializer
 
 
 
