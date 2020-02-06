@@ -44,7 +44,8 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            python filestore/manage.py test
+            cd filestore
+            python manage.py test
       - store_artifacts:
           path: test-reports
           destination: test-reports
