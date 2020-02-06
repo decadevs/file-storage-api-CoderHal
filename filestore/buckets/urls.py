@@ -4,7 +4,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 from .views import BucketDetail
 from .views import BucketList
-from .models import Bucket
+from buckets.models import Bucket
 
 urlpatterns = [
     path('buckets/', BucketList.as_view(), name='buckets'),
