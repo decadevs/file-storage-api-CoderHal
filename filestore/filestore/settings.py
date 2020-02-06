@@ -27,7 +27,7 @@ SECRET_KEY = 'w=w+)9te3o&m9)iavyk8=*8&&0yelg*k33-%=kz*u22&^wqtj1'
  
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = config('DEBUG', default=True, cast=bool)
 
 
 
@@ -91,13 +91,14 @@ if DEBUG == True:
             
         }
     }
-else{
+else:
     DATABASES = {
         'default': {
-            
+            **dj_database_url.parse(config("DATABASE_URL", cast=str, default={}), conn_max_age=600),
+            'ENGINE': 'django.db.backends.djongo'
         }
     }
-}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

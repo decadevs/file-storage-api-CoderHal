@@ -23,6 +23,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
+              
       - run:
           name: install dependencies
           command: |
@@ -43,7 +44,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            python manage.py test
+            python filestore/manage.py test
       - store_artifacts:
           path: test-reports
           destination: test-reports
