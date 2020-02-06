@@ -3,6 +3,6 @@ setup:
     - plan: heroku-mongolab
 build:
   docker:
-    web: Dockerfile
+    api: Dockerfile
 run:
-  web: bundle exec puma -C config/puma.rb
+  api: gunicorn filestore.wsgi 0.0.0.0:$PORT --log-file -
