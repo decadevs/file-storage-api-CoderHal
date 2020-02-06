@@ -7,9 +7,9 @@ services:
       - "27017:27017"
   api:
     build: .
-    command: 
-      - python manage.py migrate
-      - python manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:8000
+
+      # - python manage.py migrate
     volumes:
       - .:/code
     ports:
