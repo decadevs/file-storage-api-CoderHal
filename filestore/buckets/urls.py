@@ -1,6 +1,6 @@
 from django.urls import path
 from django.conf.urls import url
-from .bucket import Bucket
+from .models import Bucket
 from rest_framework.urlpatterns import format_suffix_patterns
 from .views import BucketDetail, BucketList
 
