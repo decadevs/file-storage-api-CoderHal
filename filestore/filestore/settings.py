@@ -85,7 +85,7 @@ if DEBUG == True:
         'default': {
             'ENGINE': 'djongo',
             'NAME': 'filestore',
-            'HOST': 'localhost:27017',
+            'HOST': 'db:27017',
             'USERNAME': 'hal',
             'PASSWORD': 'curly',
             
