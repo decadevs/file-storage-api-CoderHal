@@ -1,10 +1,9 @@
-
 from rest_framework import status
 from rest_framework.test import APITestCase
 from django.urls import reverse
 
 from .mock_data import bucket_data
-from ..models.bucket import Bucket
+from ..models import Bucket
 
 
 class TestBucketView(APITestCase):

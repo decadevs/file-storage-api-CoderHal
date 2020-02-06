@@ -1,8 +1,6 @@
 from django.test import TestCase
 from rest_framework.test import APIClient
-from ..models.bucket import Bucket
-from ..views.bucket_detail import BucketDetail
-from ..views.bucket_list import BucketList
+from ..models import Bucket
 
 # Create your tests here.
 
