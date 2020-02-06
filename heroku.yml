@@ -1,29 +1,9 @@
 setup:
-    addons:
-      - plan: mongo
-        as: DATABASE
-    # config:
-    #   S3_BUCKET: my-example-bucket
-  build:
-    docker:
-      api: Dockerfile
-  
-
-
-      # setup:
-      #   addons:
-      #     - plan: heroku-mongo
-      #  build:
-      #   docker:
-      #     api: ./Dockerfile
-      #   config:
-      #     REQUIREMENTS_FILENAME: heroku.yml
-      #  release:
-      #   image: api
-      #   command:
-      #     - ./release.sh
-      #  run:
-      #   api: uwsgi --http 0:$PORT --wsgi-file ./config/wsgi.py --master --processes 4 --threads 2
-
-
-      # dM_u.ZC:*f3x,*p
+  addons:
+    - plan: heroku-mongolab
+      as: DATABASE
+build:
+  docker:
+    web: Dockerfile
+run:
+  web: bundle exec puma -C config/puma.rb
