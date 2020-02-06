@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import dj_database_url
+from decouple import config
 # from djangorestframework import rest_framework
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -22,9 +24,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'w=w+)9te3o&m9)iavyk8=*8&&0yelg*k33-%=kz*u22&^wqtj1'
-
+ 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+
+DEBUG = config('DEBUG', default=False, cast=bool)
+
+
 
 ALLOWED_HOSTS = ["*"]
 
@@ -75,18 +80,24 @@ WSGI_APPLICATION = 'filestore.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'filestore',
-        'HOST': 'db:27017',
-        'USERNAME': 'hal',
-        'PASSWORD': 'curly',
-        
+if DEBUG == True:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'djongo',
+            'NAME': 'filestore',
+            'HOST': 'db:27017',
+            'USERNAME': 'hal',
+            'PASSWORD': 'curly',
+            
+        }
+    }
+else{
+    DATABASES = {
+        'default': {
+            
+        }
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
