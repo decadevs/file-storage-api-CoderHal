@@ -17,9 +17,9 @@ class TestBucketView(APITestCase):
     def test_api_can_create_bucket(self):
 
         url = reverse("buckets")
-        response= self.client.post(url,bucket_data.bucket_data())
+        response= self.client.post(url,bucket_data())
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqual(response.data['name'],bucket_data.bucket_data()['name'])
+        self.assertEqual(response.data['name'],bucket_data()['name'])
 
 
     def test_api_can_get_a_bucket(self):
