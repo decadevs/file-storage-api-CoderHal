@@ -4,7 +4,6 @@ from rest_framework.response import Response
 
 from ..models import Bucket
 from ..serializers import BucketSerializer
-# from ..bucket_serializer import BucketSerializer
 
 
 class BucketList(APIView):

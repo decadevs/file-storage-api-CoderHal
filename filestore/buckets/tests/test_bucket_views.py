@@ -3,7 +3,7 @@ from rest_framework.test import APITestCase
 from django.urls import reverse
 
 from .mock_data import bucket_data
-from filestore.buckets.models import Bucket
+from buckets.models import Bucket
 
 
 class TestBucketView(APITestCase):

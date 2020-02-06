@@ -6,7 +6,6 @@ from ..models import Bucket
 from ..serializers import BucketSerializer
 
 
-
 class BucketDetail(APIView):
 
     def get_bucket(self, pk):
