@@ -2,9 +2,7 @@ from django.urls import path
 from django.conf.urls import url
 from rest_framework.urlpatterns import format_suffix_patterns
 
-from .views import BucketDetail
-from .views import BucketList
-from .models import Bucket
+from .views import BucketDetail, BucketList
 
 urlpatterns = [
     path('buckets/', BucketList.as_view(), name='buckets'),
