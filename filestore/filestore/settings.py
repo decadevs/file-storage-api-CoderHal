@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import db
+from . import db
+from decouple import config
 # import dj_database_url
 # from decouple import config
 # from djangorestframework import rest_framework
@@ -79,8 +80,9 @@ WSGI_APPLICATION = 'filestore.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+DEBUG = config('DEBUG', cast=bool)
 
-DATABASES = db.db_config()
+DATABASES = db.db_config(DEBUG,config("MONGODB_URI", default=""))
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
