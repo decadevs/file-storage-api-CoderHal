@@ -7,14 +7,15 @@ def db_config(DEBUG, url):
             'default': {
                 'ENGINE': 'djongo',
                 'NAME': 'filestore',
-                'HOST': 'localhost:27017'
+                'HOST': 'localhost',
+                'PORT': 27017
             }
         }
     else:
         DATABASES = {
             'default': {
-                **dj_database_url.parse(config("MONGODB_URI", cast=str, default={}), conn_max_age=600),
-                'ENGINE': 'django.db.backends.djongo'
+                'ENGINE': 'djongo',
+                'HOST': url
             }
         }
-    return config
+    return DATABASES
